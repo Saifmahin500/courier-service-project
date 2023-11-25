@@ -14,7 +14,7 @@ const DeliveryMan = () => {
 
     return (
         <div>
-            <h1 className="text-4xl font-bold my-4 text-center" >Our Top Delivery Man</h1>
+            <h1 className="text-4xl font-bold my-4 text-center" >Our Top <span className="text-[#FFC554]">Delivery</span> Man</h1>
            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
            {
                 DeliveryMan.map(man => <SingleMan key={man.id} man={man}></SingleMan>)

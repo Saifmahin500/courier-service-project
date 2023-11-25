@@ -1,4 +1,4 @@
-
+import { FaFacebook, FaInstagram,  FaTwitter,  } from "react-icons/fa";
 
 const SingleMan = ({man}) => {
     const { Name,Image,Parcels_Delivered} = man;
@@ -12,8 +12,8 @@ const SingleMan = ({man}) => {
                     <h4 className="mb-2 block font-sans text-2xl font-bold leading-snug tracking-normal text-blue-gray-900 antialiased">
                         {Name}
                     </h4>
-                    <p className="block bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-text font-sans text-base font-medium leading-relaxed text-[#f9c03b] antialiased">
-                        Owner
+                    <p className="block bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-text font-sans text-base font-medium leading-relaxed text-[#ffc554] antialiased">
+                    Parcels Delivered : {Parcels_Delivered}
                     </p>
                 </div>
                 <hr />

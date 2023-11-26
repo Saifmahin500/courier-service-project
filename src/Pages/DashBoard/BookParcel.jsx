@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const BookParcel = () => {
@@ -36,7 +37,7 @@ const BookParcel = () => {
             if(data.insertedId) {
                 Swal.fire(
                     'Good job!',
-                    'Your Food is added!',
+                    'You successfully Booking a Parcel!',
                     'success'
                 )
                 

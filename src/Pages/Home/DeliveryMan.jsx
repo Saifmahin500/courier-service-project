@@ -7,7 +7,7 @@ const DeliveryMan = () => {
     const [DeliveryMan, setDeliveryMan] = useState([])
 
     useEffect(() => {
-        fetch('/public/FakeData.json')
+        fetch('http://localhost:5500/TopDeliveryMan')
         .then(res => res.json())
         .then(data => setDeliveryMan(data))
     },[])

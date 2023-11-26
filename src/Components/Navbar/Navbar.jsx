@@ -1,8 +1,14 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 
 const Navbar = () => {
+    const {user,logOut} = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut();
+    }
     return (
         
         <div>
@@ -18,7 +24,7 @@ const Navbar = () => {
                             <NavLink to="/" className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "text-[#ffc554]" : ""
                             }><li><a>Home</a></li></NavLink>
-                            <NavLink to="/dashBoard" className={({ isActive, isPending }) =>
+                            <NavLink to="/dashboard" className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "text-[#ffc554]" : ""
                             }><li><a>DashBoard</a></li></NavLink>
                                 <NavLink to="/login" className={({ isActive, isPending }) =>
@@ -39,7 +45,7 @@ const Navbar = () => {
                             <NavLink to="/" className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "text-[#ffc554]" : ""
                             }><li><a>Home</a></li></NavLink>
-                            <NavLink to="/dashBoard" className={({ isActive, isPending }) =>
+                            <NavLink to="/dashboard" className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "text-[#ffc554]" : ""
                             }><li><a>DashBoard</a></li></NavLink>
                             <button className="btn btn-ghost btn-circle">
@@ -55,7 +61,7 @@ const Navbar = () => {
                         </ul>
                     </div>
 
-                    {/* <div className="navbar-end">
+                    <div className="navbar-end">
                         {
                             user ?
                                 <div className="flex items-center text-center">
@@ -78,20 +84,11 @@ const Navbar = () => {
                                             <br />
                                             <li>
 
-                                              <Link to={"/myAddFood"}> 
+                                              <Link to={"/dashboard"}> 
                                               <p className="font-bold ">My Added Food Items</p>
                                               </Link>
                                             </li>
-                                            <li>
-                                               <Link to={'/AddFood'}>
-                                               <p className="font-bold ">Add a Food Item</p>
-                                               </Link>
-                                            </li>
-                                            <li>
-                                                <Link to={"/MyOrder"}>
-                                                <p className="font-bold ">My Order Food Items</p>
-                                                </Link>
-                                            </li>
+                                           
                                         </ul>
                                     </div>
                                     <button onClick={handleLogOut}
@@ -106,7 +103,7 @@ const Navbar = () => {
                                 :
                                 <NavLink to="/login">
                                     <button
-                                        className="btn bg-[#53ec62]"
+                                        className="btn bg-[#ffc554]"
                                         type="button"
                                         data-ripple-light="true"
                                     >
@@ -116,7 +113,7 @@ const Navbar = () => {
 
                         }
 
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,17 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
 import { FaTrashAlt } from "react-icons/fa";
+import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
 
 
 
 
 const AllDeliveryMan = () => {
-
+   
+    const axiosSecure = UseAxiosSecure();
     const { data: DeliveryMan = [] } = useQuery({
         queryKey: ['DeliveryMan'],
-        queryFn: () =>
-            fetch('http://localhost:5500/TopDeliveryMan').then(
-                (res) => res.json(),
-            ),
+        queryFn:  async() => {
+            const res = await axiosSecure.get('/TopDeliveryMan');
+            return res.data;
+        }
 
     })
     return (

@@ -43,8 +43,8 @@ return (
         <h2 className="text-3xl font-bold text-center underline mt-5 mb-10">My Parcel List</h2>
         <div>
             <div className="overflow-x-auto">
-                <table className="table table-xs">
-                    <thead>
+                <table className="table bg-[#ffc554] ">
+                    <thead className="text-black font-bold">
                         <tr>
                             <th>#</th>
                             <th>Parcel Type,</th>

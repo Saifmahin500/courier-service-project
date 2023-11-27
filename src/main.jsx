@@ -19,6 +19,7 @@ import BookParcel from './Pages/DashBoard/BookParcel';
 import MyParcel from './Pages/DashBoard/MyParcel';
 import AllUsers from './Pages/DashBoard/AllUsers';
 import AllDeliveryMan from './Pages/DashBoard/AllDeliveryMan';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children : [
       {
         path: "bookParcel",

@@ -9,10 +9,11 @@ const AllUsers = () => {
 
     const { data: users = [] , refetch } = useQuery({
         queryKey: ['users'],
-        queryFn: () =>
-        fetch('http://localhost:5500/users').then(
-            (res) => res.json(),
-        ),
+        queryFn: async() => {
+            const res = await axiosSecure.get('/users');
+            return res.data;
+        }
+       
             
     })
     const handleDelete = id => {
@@ -78,8 +79,8 @@ const AllUsers = () => {
                     </thead>
                     <tbody>
                        {
-                        users.map(user =>  <tr key={user._id}>
-                            <th>1</th>
+                        users.map((user, index) =>  <tr key={user._id}>
+                            <th>{index + 1}</th>
                             <td>{user.name}</td>
                             <td>{user.email}</td>
                             <td className="font-bold">{ user.role === 'admin' ? 'Admin' :

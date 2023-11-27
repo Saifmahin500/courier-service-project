@@ -17,6 +17,8 @@ import AuthProvider from './Provider/AuthProvider';
 import Dashboard from './MainLayout/Dashboard';
 import BookParcel from './Pages/DashBoard/BookParcel';
 import MyParcel from './Pages/DashBoard/MyParcel';
+import AllUsers from './Pages/DashBoard/AllUsers';
+import AllDeliveryMan from './Pages/DashBoard/AllDeliveryMan';
 
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
@@ -50,6 +52,15 @@ const router = createBrowserRouter([
       {
         path: "MyParcels",
         element: <MyParcel></MyParcel>
+      },
+      // admit route
+      {
+        path: "users",
+        element: <AllUsers></AllUsers>
+      },
+      {
+        path: "AllDeliveryMen",
+        element: <AllDeliveryMan></AllDeliveryMan>
       },
     ]
   }

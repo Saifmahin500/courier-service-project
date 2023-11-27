@@ -1,7 +1,7 @@
-import { FaFacebook, FaInstagram,  FaTwitter,  } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter, } from "react-icons/fa";
 
-const SingleMan = ({man}) => {
-    const { Name,Image,Parcels_Delivered} = man;
+const SingleMan = ({ man }) => {
+    const { Name, Image, Parcels_Delivered } = man;
     return (
         <div >
             <div className="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
@@ -13,8 +13,15 @@ const SingleMan = ({man}) => {
                         {Name}
                     </h4>
                     <p className="block bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-text font-sans text-base font-medium leading-relaxed text-[#ffc554] antialiased">
-                    Parcels Delivered : {Parcels_Delivered}
+                        Parcels Delivered : {Parcels_Delivered}
                     </p>
+                    <p><div className="rating rating-sm">
+                        <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked />
+                        <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                    </div></p>
                 </div>
                 <hr />
                 <div className="flex justify-center gap-7 p-6 pt-2">

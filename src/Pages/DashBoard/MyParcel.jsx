@@ -3,10 +3,15 @@ import { FaEdit, FaTrashAlt } from "react-icons/fa";
 
 import UseParcel from "../../Hooks/UseParcel";
 import Swal from "sweetalert2";
+import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
 
 
 const MyParcel = () => {
     const [parcel, refetch] = UseParcel();
+    const axiosPublic = UseAxiosPublic();
+    // const handleUpdate = id => {
+
+    // }
     const handleDelete = id => {
         Swal.fire({
             title: "Are you sure?",
@@ -18,9 +23,7 @@ const MyParcel = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5500/BookingParcel/${id}`, {
-                    method: "DELETE",
-                })                   
+                axiosPublic.delete(`/BookingParcel/${id}`)                  
              .then(res => {
                         if (res.data.deletedCount > 0) {
                             refetch()
@@ -60,9 +63,10 @@ return (
                             <td>{item.RequestedDeliveryDate}</td>
                             <td></td>
                             <td></td>
-                            <td></td>
+                            <td><button className="btn btn-success">Pending</button></td>
                             <td>
-                                <button className="btn btn-ghost btn-lg"><FaEdit></FaEdit></button>
+                            {/* onClick={() => handleUpdate(item._id)} */}
+                                <button  className="btn btn-ghost btn-lg"><FaEdit></FaEdit></button>
                             </td>
                             <td>
 

@@ -17,14 +17,12 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
           <ul className="menu p-6 w-80 min-h-full bg-base-200 text-base-content font-bold text-xl">
             {/* Sidebar content here */}
-            <NavLink to={"/dashboard/bookParcel"}><li><a><FaBook></FaBook>Book a Parcel</a></li></NavLink>
-                  <NavLink to={"/dashboard/MyParcels"}><li><a><FaAtlas></FaAtlas>My Parcels</a></li></NavLink>
-                  <NavLink to={"/dashboard/MyProfile"}><li><a><FaUser></FaUser>My Profile</a></li></NavLink>
-            {/* {
+            
+            {
               isAdmin ? <>
                 <NavLink to={"/dashboard/adminHome"}><li><a><FaHome></FaHome>Admin Home</a></li></NavLink>
                 <NavLink to={"/dashboard/AllParcels"}><li><a><FaAlignCenter></FaAlignCenter>All Parcels</a></li></NavLink>
-                <NavLink to={"/dashboard/AllUsers"}><li><a><FaUsers></FaUsers>All Users</a></li></NavLink>
+                <NavLink to={"/dashboard/users"}><li><a><FaUsers></FaUsers>All Users</a></li></NavLink>
                 <NavLink to={"/dashboard/AllDeliveryMen"}><li><a><FaBiking></FaBiking>All Delivery Men</a></li></NavLink>
               </>
                 :
@@ -34,7 +32,7 @@ const Dashboard = () => {
                   <NavLink to={"/dashboard/MyProfile"}><li><a><FaUser></FaUser>My Profile</a></li></NavLink>
                 
                 </>
-            } */}
+            }
             <div className="divider divider-info"></div>
             <NavLink to={"/"}><li><a><FaHome></FaHome>Home</a></li></NavLink>
             

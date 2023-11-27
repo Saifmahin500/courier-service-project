@@ -9,7 +9,7 @@ const BookParcel = () => {
         e.preventDefault();
         const form = e.target;
         const Name = form.Name.value;
-        const Email = form.Email.value;
+        const email = form.email.value;
         const PhoneNumber = form.PhoneNumber.value;
         const ParcelType = form.ParcelType.value;
         const ParcelWeight = form.ParcelWeight.value;
@@ -20,7 +20,7 @@ const BookParcel = () => {
         const RequestedDeliveryDate= form.RequestedDeliveryDate.value;      
         const longitude = form.longitude.value;      
         const Latitude = form.Latitude.value;      
-        const FoodItems = {Name,Email,PhoneNumber,ParcelType,ParcelWeight,Price,ReceiverName,ReceiverPhoneNumber,ParcelDeliveryAddress,RequestedDeliveryDate,longitude,Latitude}
+        const FoodItems = {Name,email,PhoneNumber,ParcelType,ParcelWeight,Price,ReceiverName,ReceiverPhoneNumber,ParcelDeliveryAddress,RequestedDeliveryDate,longitude,Latitude}
         console.log(FoodItems);
 
 
@@ -55,13 +55,13 @@ const BookParcel = () => {
                     <label className="label">
                         <span className="label-text font-bold">Name</span>
                     </label>
-                    <input type="text" name="Name" readOnly defaultValue={user?.displayName}  className="input input-bordered font-semibold " required />
+                    <input type="text" name="Name"  defaultValue={user?.displayName}  className="input input-bordered font-semibold " required />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text font-bold">Email</span>
                     </label>
-                    <input type="email" readOnly name="Email"  placeholder="email" defaultValue={user?.email} className="input input-bordered font-bold " required />
+                    <input type="email" readOnly name="email"  placeholder="email" defaultValue={user?.email} className="input input-bordered font-bold " required />
                 </div>
                 <div className="form-control">
                     <label className="label">

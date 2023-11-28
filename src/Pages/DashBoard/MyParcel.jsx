@@ -4,14 +4,13 @@ import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import UseParcel from "../../Hooks/UseParcel";
 import Swal from "sweetalert2";
 import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
+import { Link } from "react-router-dom";
 
 
 const MyParcel = () => {
     const [parcel, refetch] = UseParcel();
     const axiosPublic = UseAxiosPublic();
-    // const handleUpdate = id => {
-
-    // }
+    
     const handleDelete = id => {
         Swal.fire({
             title: "Are you sure?",
@@ -65,8 +64,8 @@ return (
                             <td></td>
                             <td><button className="btn btn-success">Pending</button></td>
                             <td>
-                            {/* onClick={() => handleUpdate(item._id)} */}
-                                <button  className="btn btn-ghost btn-lg"><FaEdit></FaEdit></button>
+                            
+                                <Link to={`/dashboard/update/${item._id}`}><button className="btn btn-ghost btn-lg"><FaEdit></FaEdit></button></Link>
                             </td>
                             <td>
 

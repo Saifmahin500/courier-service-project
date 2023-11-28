@@ -24,7 +24,7 @@ const Navbar = () => {
                             <NavLink to="/" className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "text-[#ffc554]" : ""
                             }><li><a>Home</a></li></NavLink>
-                            <NavLink to="/dashboard" className={({ isActive, isPending }) =>
+                            <NavLink to="/dashboard/bookParcel" className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "text-[#ffc554]" : ""
                             }><li><a>DashBoard</a></li></NavLink>
                                 <NavLink to="/login" className={({ isActive, isPending }) =>
@@ -45,7 +45,7 @@ const Navbar = () => {
                             <NavLink to="/" className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "text-[#ffc554]" : ""
                             }><li><a>Home</a></li></NavLink>
-                            <NavLink to="/dashboard" className={({ isActive, isPending }) =>
+                            <NavLink to="/dashboard/bookParcel" className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "text-[#ffc554]" : ""
                             }><li><a>DashBoard</a></li></NavLink>
                             <button className="btn btn-ghost btn-circle">
@@ -84,8 +84,8 @@ const Navbar = () => {
                                             <br />
                                             <li>
 
-                                              <Link to={"/dashboard"}> 
-                                              <p className="font-bold ">My Added Food Items</p>
+                                              <Link to={"/dashboard/bookParcel"}> 
+                                              <p className="font-bold ">DashBoard</p>
                                               </Link>
                                             </li>
                                            

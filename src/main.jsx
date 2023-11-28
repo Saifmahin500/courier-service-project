@@ -22,6 +22,7 @@ import AllDeliveryMan from './Pages/DashBoard/AllDeliveryMan';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import AdminRoute from './PrivateRoute/AdminRoute';
 import AllParcel from './Pages/DashBoard/AllParcel';
+import Update from './Components/Update/Update';
 
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
@@ -55,6 +56,11 @@ const router = createBrowserRouter([
       {
         path: "MyParcels",
         element: <MyParcel></MyParcel>
+      },
+      {
+        path: "update/:id",
+        element: <Update></Update>,
+        loader: ({params}) => fetch(`http://localhost:5500/BookingParcel/${params.id}`)
       },
       // admit route
       {

@@ -20,8 +20,11 @@ const BookParcel = () => {
         const RequestedDeliveryDate= form.RequestedDeliveryDate.value;      
         const longitude = form.longitude.value;      
         const Latitude = form.Latitude.value;      
-        const FoodItems = {Name,email,PhoneNumber,ParcelType,ParcelWeight,Price,ReceiverName,ReceiverPhoneNumber,ParcelDeliveryAddress,RequestedDeliveryDate,longitude,Latitude}
-        console.log(FoodItems);
+        const ParcelItems = {Name,email,PhoneNumber,ParcelType,ParcelWeight,Price,ReceiverName,ReceiverPhoneNumber,ParcelDeliveryAddress,RequestedDeliveryDate,longitude,Latitude}
+        console.log(ParcelItems);
+
+      
+
 
 
         fetch('http://localhost:5500/BookingParcel',{
@@ -29,7 +32,7 @@ const BookParcel = () => {
             headers: {
                 'content-type' : 'application/json'
             },
-            body: JSON.stringify(FoodItems)
+            body: JSON.stringify(ParcelItems)
         })
         .then(res => res.json())
         .then(data => {

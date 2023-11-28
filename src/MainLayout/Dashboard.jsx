@@ -9,9 +9,10 @@ const Dashboard = () => {
         <div className="drawer lg:drawer-open ">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         
-        <div className="drawer-side">
+        <div className="drawer-side bg-orange-400">
           <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-          <ul className="menu p-6 w-80 min-h-full bg-base-200 text-base-content font-bold text-xl">
+          <ul className="menu p-6 w-80 min-h-full bg-base-200
+           text-base-content font-bold text-xl">
             {/* Sidebar content here */}
             
             {

@@ -8,12 +8,7 @@ const Dashboard = () => {
     return (
         <div className="drawer lg:drawer-open ">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col  p-8">
-          {/* Page content here */}
-          <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
-          <Outlet></Outlet>
-  
-        </div>
+        
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
           <ul className="menu p-6 w-80 min-h-full bg-base-200 text-base-content font-bold text-xl">
@@ -35,9 +30,13 @@ const Dashboard = () => {
                 </>
             }
             <div className="divider divider-info"></div>
-            <NavLink to={"/"}><li><a><FaHome></FaHome>Home</a></li></NavLink>
-            
+            <NavLink to={"/"}><li><a><FaHome></FaHome>Home</a></li></NavLink>         
           </ul>
+        </div>
+        <div className="drawer-content flex flex-col  p-8">
+          {/* Page content here */}
+          <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+          <Outlet></Outlet>
   
         </div>
       </div>

@@ -20,6 +20,8 @@ import MyParcel from './Pages/DashBoard/MyParcel';
 import AllUsers from './Pages/DashBoard/AllUsers';
 import AllDeliveryMan from './Pages/DashBoard/AllDeliveryMan';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import AdminRoute from './PrivateRoute/AdminRoute';
+import AllParcel from './Pages/DashBoard/AllParcel';
 
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
@@ -57,11 +59,15 @@ const router = createBrowserRouter([
       // admit route
       {
         path: "users",
-        element: <AllUsers></AllUsers>
+        element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
       },
       {
         path: "AllDeliveryMen",
-        element: <AllDeliveryMan></AllDeliveryMan>
+        element: <AdminRoute><AllDeliveryMan></AllDeliveryMan></AdminRoute>
+      },
+      {
+        path: "AllParcels",
+        element: <AdminRoute><AllParcel></AllParcel></AdminRoute>
       },
     ]
   }

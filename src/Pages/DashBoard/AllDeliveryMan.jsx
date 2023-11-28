@@ -29,8 +29,9 @@ const AllDeliveryMan = () => {
                             </th>
                             <th> Image</th>
                             <th> Name</th>
+                            <th>Phone Number</th>
                             <th>Parcels Delivered</th>
-                            <th>Action</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -42,7 +43,7 @@ const AllDeliveryMan = () => {
                                 <td>
                                     <div className="flex items-center gap-3">
                                         <div className="avatar">
-                                            <div className="mask mask-circle w-24 h-24">
+                                            <div className="mask mask-circle w-24 h-24 text-center">
                                                 <img src={Man.Image} alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
@@ -52,11 +53,12 @@ const AllDeliveryMan = () => {
                                 <td className="font-bold">
                                     {Man.Name}
                                 </td>
+                                <td className="text-center">
+                                    {Man.Phone_number}
+                                </td>
                                 <td className="text-center">{Man.Parcels_Delivered
                                 }</td>
-                                <th>
-                                    <button onClick={() => handleDelete(item._id)} className="btn btn-ghost btn-lg"><FaTrashAlt className="text-red-600"></FaTrashAlt></button>
-                                </th>
+                                
                             </tr>)
                         }
 

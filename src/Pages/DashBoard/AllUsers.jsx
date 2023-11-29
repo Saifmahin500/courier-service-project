@@ -66,9 +66,9 @@ const AllUsers = () => {
                 <h3 className="text-3xl underline">total Users : {users.length}</h3>
             </div>
             <div className="overflow-x-auto my-8">
-                <table className="table bg-[#ffc554]">
+                <table className="table ">
                     {/* head */}
-                    <thead className="text-black font-bold text-xl">
+                    <thead className="text-black font-bold text-xl bg-[#ffc554]">
                         <tr>
                             <th>#</th>
                             <th>Name</th>

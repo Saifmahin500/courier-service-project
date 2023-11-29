@@ -7,7 +7,7 @@ const Update = () => {
     const axiosPublic = UseAxiosPublic()
     const { Name, email, longitude, RequestedDeliveryDate, ReceiverPhoneNumber, ReceiverName,Price,ParcelWeight,ParcelDeliveryAddress,Latitude,ParcelType,PhoneNumber,_id } = useLoaderData();
 
-    const handleUpdateProduct = e => {
+    const handleUpdateProduct = async e => {
         e.preventDefault();
         const form = e.target;
         const Name = form.Name.value;
@@ -25,7 +25,8 @@ const Update = () => {
         const ParcelItems = {Name,email,PhoneNumber,ParcelType,ParcelWeight,Price,ReceiverName,ReceiverPhoneNumber,ParcelDeliveryAddress,RequestedDeliveryDate,longitude,Latitude}
         console.log(ParcelItems);
 
-        const items = axiosPublic.patch(`/BookingParcel/${_id}`, ParcelItems)       
+        const items = await axiosPublic.patch(`/BookingParcel/${_id}`, ParcelItems)
+        console.log(items.data);       
             if(items.data.modifiedCount > 0){
                 Swal.fire({
                     position: "top-end",

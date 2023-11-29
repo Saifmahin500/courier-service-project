@@ -25,7 +25,7 @@ const AllDeliveryMan = () => {
                     <thead className="bg-[#ffc554] font-bold text-lg text-black">
                         <tr>
                             <th>
-                                number
+                                Number
                             </th>
                             <th> Image</th>
                             <th> Name</th>
@@ -38,7 +38,7 @@ const AllDeliveryMan = () => {
                         {
                             DeliveryMan.map((Man, index) => <tr key={Man._id}>
                                 <th>
-                                    {index + 1}
+                                    {index + 1}.
                                 </th>
                                 <td>
                                     <div className="flex items-center gap-3">

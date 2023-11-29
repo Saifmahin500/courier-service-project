@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
-import { app } from "../Firebase/Firebase.config";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import UseAxiosPublic from "../Hooks/UseAxiosPublic";
+import app from "../Firebase/Firebase.config";
 export const AuthContext = createContext();
 const auth = getAuth(app)
 
@@ -41,16 +41,16 @@ const AuthProvider = ({children}) => {
                 .then(res => {
                     if (res.data.token) {
                         localStorage.setItem("access Token", res.data.token)
-                        
+                        setLoading(false)
                     }
                     // console.log('token response', res.data);
                 })
             }
             else {
                 localStorage.removeItem('access Token');
-
+                setLoading(false)
             }
-             setLoading(false)
+             
          })
          return () => {
              return unsubscribe();
@@ -59,7 +59,7 @@ const AuthProvider = ({children}) => {
 
 
 
-    const authInfo = { user,GoogleSignIn,CreateUser,signIn,logOut
+    const authInfo = { user,GoogleSignIn,CreateUser,signIn,logOut,loading
     }
     return (
         <AuthContext.Provider value={authInfo}>

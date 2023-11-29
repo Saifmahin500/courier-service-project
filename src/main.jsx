@@ -23,12 +23,16 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import AdminRoute from './PrivateRoute/AdminRoute';
 import AllParcel from './Pages/DashBoard/AllParcel';
 import Update from './Components/Update/Update';
+import Statistics from './Pages/DashBoard/Statistics';
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
+import Myprofile from './Pages/DashBoard/Myprofile';
 
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -48,6 +52,7 @@ const router = createBrowserRouter([
   {
     path: "dashboard",
     element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+    errorElement: <ErrorPage></ErrorPage>,
     children : [
       {
         path: "bookParcel",
@@ -56,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "MyParcels",
         element: <MyParcel></MyParcel>
+      },
+      {
+        path: "MyProfile",
+        element: <Myprofile></Myprofile>
       },
       {
         path: "update/:id",
@@ -74,6 +83,10 @@ const router = createBrowserRouter([
       {
         path: "AllParcels",
         element: <AdminRoute><AllParcel></AllParcel></AdminRoute>
+      },
+      {
+        path: "Statistics",
+        element: <AdminRoute><Statistics></Statistics></AdminRoute>
       },
     ]
   }

@@ -42,14 +42,13 @@ return (
         <h2 className="text-3xl font-bold text-center underline mt-5 mb-10">My Parcel List</h2>
         <div>
             <div className="overflow-x-auto">
-                <table className="table bg-[#ffc554] ">
-                    <thead className="text-black font-bold">
+                <table className="table  ">
+                    <thead className="bg-[#ffc554] font-bold text-lg text-black">
                         <tr>
                             <th>#</th>
-                            <th>Parcel Type,</th>
-                            <th>Requested Delivery Date</th>
+                            <th>Parcel Type</th>
+                            <th>Req Delivery Date</th>
                             <th>Booking Date</th>
-                            <th>Delivery Men ID</th>
                             <th>Booking Status</th>
                             <th>Update</th>
                             <th>Cancel</th>
@@ -57,19 +56,20 @@ return (
                     </thead>
                     <tbody>
                         {parcel.map((item, index) => <tr key={item._id}>
-                            <th>{index + 1}</th>
+                            <th>{index + 1}.</th>
                             <td>{item.ParcelType}</td>
                             <td>{item.RequestedDeliveryDate}</td>
-                            <td></td>
-                            <td></td>
-                            <td><button className="btn btn-success">Pending</button></td>
+                            <td>{item.BookingDate}</td>
+                           
+                            <td className="font-bold text-xl">{ item.role === 'On the Way' ? 'On the Way' :
+                            <button className="btn btn-error font-bold ">Pending</button>}</td>
                             <td>
-                            
-                                <Link to={`/dashboard/update/${item._id}`}><button className="btn btn-ghost btn-lg"><FaEdit></FaEdit></button></Link>
+                              {item.role === 'On the Way' ? ' ' : <Link to={`/dashboard/update/${item._id}`}><button className="btn btn-ghost btn-lg "><FaEdit></FaEdit></button></Link> }
+                                
                             </td>
                             <td>
 
-                                <button onClick={() => handleDelete(item._id)} className="btn btn-ghost btn-lg"><FaTrashAlt className="text-red-600"></FaTrashAlt></button>
+                                <button onClick={() => handleDelete(item._id)} className="btn btn-ghost btn-lg font-bold "><FaTrashAlt className="text-red-600"></FaTrashAlt></button>
                             </td>
                         </tr>)}
                     </tbody>

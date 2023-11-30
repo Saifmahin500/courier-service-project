@@ -18,7 +18,7 @@ const DeliveryMan = () => {
             <h1 className="text-2xl  my-4 text-center" > Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus corporis vitae possimus optio recusandae, facere quaerat? Impedit minima dolor ipsa? </h1>
            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
            {
-                DeliveryMan.map(man => <SingleMan key={man.id} man={man}></SingleMan>)
+                DeliveryMan.map(man => <SingleMan key={man._id} man={man}></SingleMan>)
             }
            </div>
         </div>

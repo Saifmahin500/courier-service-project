@@ -51,16 +51,16 @@ const AllParcel = () => {
                             
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="text-center">
                         {parcel.map((item, index) => <tr key={item._id}>
                             <th>{index + 1}</th>
                             <td>{item.Name}</td>
                             <td>{item.email}</td>
                             <td>{item.BookingDate}</td>
-                            <td>{item.RequestedDeliveryDate}</td>
+                            <td >{item.RequestedDeliveryDate}</td>
                             <td>{item.Price}TK</td>
                             <td className="font-bold">{ item.role === 'On the Way' ? 'On the Way' : <button onClick={() => handleChange(item)} className="btn btn-error">Pending</button>}</td>
-                            <td><button className="btn btn-success">Manage</button></td>
+                            <td><button className="btn btn-warning">Manage</button></td>
                             
                             
                         </tr>)}
